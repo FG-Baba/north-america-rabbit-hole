@@ -1,0 +1,317 @@
+@media (max-width: 900px) {
+  .story-nav {
+    top: 12px;
+  }
+
+  .story-nav a {
+    padding: 6px 10px;
+    font-size: 0.62rem;
+  }
+
+  .story-nav a span {
+    display: none;
+  }
+
+  .chapter-marker {
+    display: none;
+  }
+
+  .cover-base-layer,
+  .cover-map-layer,
+  .cover-mountain-layer {
+    inset: -1%;
+    width: 102%;
+    height: 102%;
+    object-fit: cover;
+    object-position: 66% center;
+  }
+
+  .cover-base-layer {
+    filter: brightness(0.6) contrast(1.06);
+  }
+
+  .cover-live-title {
+    top: 15%;
+    left: 24px;
+    display: block;
+    width: calc(100% - 48px);
+  }
+
+  .cover-display-title {
+    max-width: 580px;
+    font-size: clamp(3.25rem, 12vw, 6.3rem);
+  }
+
+  .chapter-rail {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .chapter-rail--water,
+  .chapter-rail--people,
+  .chapter-rail--land {
+    align-items: center;
+  }
+
+  .story-beat,
+  .story-beat--clear {
+    width: min(600px, calc(100vw - 40px));
+  }
+
+  .story-beat h2 {
+    font-size: clamp(2rem, 8vw, 3.7rem);
+  }
+
+  .scroll-chapter--people .story-beat:last-child {
+    width: min(760px, calc(100vw - 40px));
+  }
+
+  .terrain-label--ridge,
+  .terrain-label--west {
+    left: 6%;
+  }
+
+  .terrain-label--shield {
+    right: 6%;
+  }
+
+  .water-terrain {
+    object-position: 48% center;
+  }
+
+  .people-canvas {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 620px) {
+  .scroll-chapter {
+    min-height: 380svh;
+  }
+
+  .scroll-chapter--water {
+    min-height: 460svh;
+  }
+
+  .scroll-chapter--people {
+    min-height: 560svh;
+  }
+
+  .chapter-rail {
+    gap: 58svh;
+    padding-bottom: 12svh;
+  }
+
+  .story-beat,
+  .story-beat--clear {
+    padding: 24px 22px;
+    border-radius: 2px;
+    transform: translateY(62px);
+  }
+
+  .story-beat h2,
+  .story-beat--paper h2 {
+    font-size: clamp(1.9rem, 9.5vw, 3.1rem);
+  }
+
+  .story-beat p {
+    font-size: 0.94rem;
+  }
+
+  .cover-live-title {
+    top: 12%;
+  }
+
+  .cover-display-title {
+    font-size: clamp(3.2rem, 15vw, 5.7rem);
+    line-height: 0.9;
+  }
+
+  .cover-live-title span {
+    display: block;
+    max-width: 260px;
+    line-height: 1.55;
+  }
+
+  .ocean-seam {
+    right: 14%;
+  }
+
+  .terrain-label {
+    display: none;
+  }
+
+  .basin-label--pacific { left: 18px; }
+  .basin-label--atlantic { right: 18px; }
+  .basin-label--hudson { left: auto; right: 18px; }
+
+  .fire-cameo {
+    grid-template-columns: 1fr;
+  }
+
+  .fire-mark {
+    width: 48px;
+    height: 48px;
+  }
+
+  .network-key,
+  .border-key {
+    right: 16px;
+  }
+
+  .night-lights {
+    inset: -18%;
+    width: 136%;
+    height: 136%;
+    object-position: 52% center;
+  }
+
+  .power-rule {
+    font-size: 0.57rem;
+  }
+
+  .future-questions,
+  .sources-grid,
+  .honesty-notes {
+    grid-template-columns: 1fr;
+  }
+
+  .future-questions article,
+  .future-questions article + article {
+    padding: 22px 0;
+    border-left: 0;
+  }
+
+  .future-questions article + article {
+    border-top: 1px solid var(--hairline);
+  }
+
+  .sources-grid {
+    gap: 22px;
+  }
+
+  .sources-drawer summary small {
+    display: none;
+  }
+
+  .final-answer footer {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .asset-credit {
+    right: 10px;
+    bottom: 10px;
+    font-size: 0.47rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .scroll-chapter {
+    min-height: auto;
+  }
+
+  .chapter-stage {
+    position: relative;
+    height: 72svh;
+  }
+
+  .chapter-rail {
+    min-height: auto;
+    margin: 0;
+    padding: 36px 20px 72px;
+    align-items: center;
+    gap: 24px;
+    background: #101310;
+  }
+
+  .chapter-marker {
+    display: none;
+  }
+}
+
+@media print {
+  @page {
+    margin: 12mm;
+    size: A4 portrait;
+  }
+
+  body {
+    color: #171814;
+    background: white;
+  }
+
+  .story-nav,
+  .chapter-marker,
+  .scroll-cue,
+  .share-button,
+  .water-control,
+  .asset-credit {
+    display: none !important;
+  }
+
+  .scroll-chapter,
+  .scroll-chapter--people {
+    min-height: auto;
+    break-after: page;
+  }
+
+  .chapter-stage {
+    position: relative;
+    height: 92mm;
+  }
+
+  .chapter-rail {
+    display: grid;
+    min-height: auto;
+    margin: 0;
+    padding: 8mm 0 0;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 6mm;
+  }
+
+  .story-beat,
+  .story-beat--paper,
+  .story-beat--clear,
+  .scroll-chapter--people .story-beat:last-child {
+    width: auto;
+    padding: 5mm;
+    color: #171814;
+    border: 1px solid #c9c3b5;
+    background: white;
+    box-shadow: none;
+    backdrop-filter: none;
+    break-inside: avoid;
+  }
+
+  .story-beat p,
+  .story-beat strong,
+  .story-beat--paper p,
+  .story-beat--paper strong {
+    color: #262720;
+  }
+
+  .story-beat h2,
+  .story-beat--paper h2 {
+    font-size: 20pt;
+  }
+
+  .sources-drawer[open] .sources-grid,
+  .sources-drawer[open] .honesty-notes {
+    display: none;
+  }
+}

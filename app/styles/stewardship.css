@@ -1,0 +1,169 @@
+.water-stage {
+  background: #101719;
+}
+
+.water-terrain {
+  position: absolute;
+  z-index: 1;
+  inset: -5%;
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  opacity: 0.42;
+  filter: grayscale(0.4) brightness(0.48) contrast(1.18) saturate(0.75);
+  will-change: transform;
+}
+
+.water-wash {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 29%, transparent 0 14%, rgba(7, 22, 25, 0.12) 34%, rgba(5, 15, 17, 0.68) 92%),
+    linear-gradient(90deg, rgba(6, 16, 18, 0.44), transparent 45%, rgba(6, 16, 18, 0.5));
+}
+
+.water-mountain-texture {
+  position: absolute;
+  z-index: 6;
+  inset: 0;
+  width: 108%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 48% bottom;
+  clip-path: polygon(0 74%, 10% 68%, 20% 61%, 28% 51%, 36% 58%, 43% 36%, 49% 17%, 54% 31%, 61% 43%, 67% 39%, 74% 56%, 86% 65%, 100% 76%, 100% 100%, 0 100%);
+  opacity: 0.62;
+  filter: grayscale(0.55) sepia(0.15) brightness(0.56) contrast(1.25);
+  mix-blend-mode: screen;
+  transform-origin: right bottom;
+  will-change: transform;
+}
+
+.water-canvas {
+  position: absolute;
+  z-index: 8;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: saturate(1.08);
+}
+
+.basin-label {
+  position: absolute;
+  z-index: 11;
+  color: rgba(205, 236, 240, 0.58);
+  font-family: var(--mono);
+  font-size: clamp(0.55rem, 0.85vw, 0.72rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.basin-label--pacific { top: 68%; left: 4%; }
+.basin-label--hudson { top: 7%; left: 72%; }
+.basin-label--atlantic { top: 69%; right: 4%; }
+
+.water-control {
+  position: absolute;
+  z-index: 12;
+  right: clamp(20px, 4vw, 64px);
+  bottom: 44px;
+  display: none;
+  width: min(360px, calc(100vw - 40px));
+  padding: 18px;
+  border: 1px solid rgba(223, 238, 237, 0.2);
+  background: rgba(8, 18, 20, 0.68);
+  backdrop-filter: blur(14px);
+}
+
+.water-control label,
+.rail-water-control label {
+  display: block;
+  margin-bottom: 10px;
+  color: rgba(227, 240, 237, 0.7);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 22px;
+  margin: 0;
+  accent-color: var(--water);
+  cursor: ew-resize;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #54b7d2 0 32%, #8ccfc7 32% 65%, #b8dbe2 65%);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  margin-top: -7px;
+  border: 2px solid #f4f0e4;
+  border-radius: 50%;
+  background: #78cde0;
+  box-shadow: 0 0 0 5px rgba(120, 205, 224, 0.18);
+  -webkit-appearance: none;
+}
+
+.basin-answer,
+.rail-water-control > div {
+  display: grid;
+  margin-top: 10px;
+  gap: 3px;
+}
+
+.basin-answer strong,
+.rail-water-control strong {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+}
+
+.basin-answer span,
+.rail-water-control span {
+  color: rgba(228, 240, 238, 0.62);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.rail-water-control {
+  padding: 18px;
+  border: 1px solid rgba(28, 31, 26, 0.2);
+  background: rgba(25, 28, 23, 0.06);
+}
+
+.rail-water-control label {
+  color: rgba(31, 33, 28, 0.58);
+}
+
+.rail-water-control span {
+  color: rgba(26, 27, 23, 0.67);
+}
+
+.fire-cameo {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 22px;
+}
+
+.fire-mark {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  border: 1px solid rgba(241, 95, 53, 0.5);
+  border-radius: 50%;
+  color: var(--ember);
+  background: radial-gradient(circle, rgba(241, 95, 53, 0.2), transparent 68%);
+  font-size: 1.3rem;
+  place-items: center;
+  box-shadow: 0 0 40px rgba(241, 95, 53, 0.15);
+}
+
+.fire-cameo h2 {
+  font-size: clamp(1.85rem, 3vw, 3rem);
+}
